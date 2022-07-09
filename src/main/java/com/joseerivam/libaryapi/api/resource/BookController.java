@@ -24,8 +24,6 @@ public class BookController {
     this.modelMapper = mapper;
   }
 
-
-
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   public BookDTO create(@RequestBody BookDTO dto) {

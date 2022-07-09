@@ -1,4 +1,4 @@
-package com.joseerivam.libaryapi;
+package com.joseerivam.libaryapi.api.resourse;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
