@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.joseerivam.libaryapi.api.dto.BookDTO;
-import com.joseerivam.libaryapi.model.Book;
+import com.joseerivam.libaryapi.model.entity.Book;
 import com.joseerivam.libaryapi.service.BookService;
 
 @ExtendWith(SpringExtension.class)
@@ -58,7 +58,7 @@ public class BookControllerTest {
 
   @Test
   @DisplayName("should throw validation error when not enough data to create book")
-  public void createIvalidBookTest() {
+  public void createIvalidBookTest() throws Exception {
 
   }
 }

@@ -1,6 +1,6 @@
 package com.joseerivam.libaryapi.service;
 
-import com.joseerivam.libaryapi.model.Book;
+import com.joseerivam.libaryapi.model.entity.Book;
 
 public interface BookService {
 
