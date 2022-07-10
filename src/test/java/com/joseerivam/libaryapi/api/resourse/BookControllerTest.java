@@ -1,5 +1,6 @@
 package com.joseerivam.libaryapi.api.resourse;
 
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -59,6 +60,13 @@ public class BookControllerTest {
   @Test
   @DisplayName("should throw validation error when not enough data to create book")
   public void createIvalidBookTest() throws Exception {
+
+    String json = new ObjectMapper().writeValueAsString(new BookDTO());
+    MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post(BOOK_API)
+        .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).content(json);
+
+    mvc.perform(request).andExpect(MockMvcResultMatchers.status().isBadRequest())
+        .andExpect(MockMvcResultMatchers.jsonPath("errors", Matchers.hasSize(3)));
 
   }
 }

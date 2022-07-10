@@ -8,7 +8,7 @@ import com.joseerivam.libaryapi.service.BookService;
 @Service
 public class BookServiceImpl implements BookService {
 
-  BookRepository repository;
+  private BookRepository repository;
 
   public BookServiceImpl(BookRepository repository) {
     this.repository = repository;
