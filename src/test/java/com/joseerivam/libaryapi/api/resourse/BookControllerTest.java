@@ -122,6 +122,19 @@ public class BookControllerTest {
     mvc.perform(request).andExpect(MockMvcResultMatchers.status().isNotFound());
   }
 
+  @Test
+  @DisplayName("Must delete a book")
+  public void deleteBookTest() throws Exception {
+
+    BDDMockito.given(service.getById(Mockito.anyLong()))
+        .willReturn(Optional.of(Book.builder().id(1L).build()));
+
+    MockHttpServletRequestBuilder request =
+        MockMvcRequestBuilders.delete(BOOK_API.concat("/" + 1)).accept(MediaType.APPLICATION_JSON);
+
+    mvc.perform(request).andExpect(MockMvcResultMatchers.status().isNoContent());
+  }
+
   private BookDTO createNewBook() {
     return BookDTO.builder().author("Arthur").title("As Aventuras").isbn("001").build();
   }
