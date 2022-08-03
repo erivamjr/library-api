@@ -1,6 +1,7 @@
 package com.joseerivam.libaryapi.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import java.util.Optional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -61,5 +62,39 @@ public class BookServiceTest {
 
     Mockito.verify(repository, Mockito.never()).save(book);
   }
+
+  @Test
+  @DisplayName("Should return one book by id")
+  public void getByIdTest() {
+    Long id = 1L;
+
+    Book book = createValidBook();
+    book.setId(id);
+    Mockito.when(repository.findById(id)).thenReturn(Optional.of(book));
+
+    Optional<Book> foundBook = service.getById(id);
+
+    assertThat(foundBook.isPresent()).isTrue();
+    assertThat(foundBook.get().getId()).isEqualTo(id);
+    assertThat(foundBook.get().getAuthor()).isEqualTo(book.getAuthor());
+    assertThat(foundBook.get().getIsbn()).isEqualTo(book.getIsbn());
+    assertThat(foundBook.get().getTitle()).isEqualTo(book.getTitle());
+
+  }
+
+  @Test
+  @DisplayName("Should return empty when id does not exist")
+  public void getBookNotFoundByIdTest() {
+    Long id = 1L;
+
+
+    Mockito.when(repository.findById(id)).thenReturn(Optional.empty());
+
+    Optional<Book> book = service.getById(id);
+
+    assertThat(book.isPresent()).isFalse();
+
+  }
+
 
 }
