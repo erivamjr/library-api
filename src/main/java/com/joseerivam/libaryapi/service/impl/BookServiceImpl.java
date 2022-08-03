@@ -1,5 +1,6 @@
 package com.joseerivam.libaryapi.service.impl;
 
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 import com.joseerivam.libaryapi.exception.BusinessException;
 import com.joseerivam.libaryapi.model.entity.Book;
@@ -22,6 +23,13 @@ public class BookServiceImpl implements BookService {
       throw new BusinessException("Isbn já cadastrado.");
     }
     return repository.save(book);
+  }
+
+
+  @Override
+  public Optional<Book> getById(Long id) {
+    // TODO Auto-generated method stub
+    return Optional.empty();
   }
 
 }
