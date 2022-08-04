@@ -97,4 +97,54 @@ public class BookServiceTest {
   }
 
 
+  @Test
+  @DisplayName("Should delete book")
+  public void deleteBookTest() {
+    Book book = Book.builder().id(1L).build();
+
+    org.junit.jupiter.api.Assertions.assertDoesNotThrow(() -> service.delete(book));
+
+    Mockito.verify(repository, Mockito.times(1)).delete(book);
+  }
+
+  @Test
+  @DisplayName("Should return error when delete book is not exist")
+  public void deleteInvalidBookTest() {
+    Book book = new Book();
+    org.junit.jupiter.api.Assertions.assertThrows(IllegalArgumentException.class,
+        () -> service.delete(book));
+
+    Mockito.verify(repository, Mockito.never()).delete(book);
+  }
+
+  @Test
+  @DisplayName("Should return error when update book is not exist")
+  public void updateInvalidBookTest() {
+    Book book = new Book();
+    org.junit.jupiter.api.Assertions.assertThrows(IllegalArgumentException.class,
+        () -> service.update(book));
+
+    Mockito.verify(repository, Mockito.never()).save(book);
+  }
+
+  @Test
+  @DisplayName("Should update a book")
+  public void updateBookTest() {
+
+    Long id = 1L;
+    Book updatingBook = Book.builder().id(id).build();
+
+    Book updateBook = createValidBook();
+    updateBook.setId(id);
+
+    Mockito.when(repository.save(updatingBook)).thenReturn(updateBook);
+
+    Book book = service.update(updatingBook);
+
+    assertThat(book.getId()).isEqualTo(updateBook.getId());
+    assertThat(book.getTitle()).isEqualTo(updateBook.getTitle());
+    assertThat(book.getIsbn()).isEqualTo(updateBook.getIsbn());
+    assertThat(book.getAuthor()).isEqualTo(updateBook.getAuthor());
+  }
+
 }

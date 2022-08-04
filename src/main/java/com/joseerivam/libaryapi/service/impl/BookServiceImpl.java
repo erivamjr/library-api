@@ -28,22 +28,25 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public Optional<Book> getById(Long id) {
-    // TODO Auto-generated method stub
     return this.repository.findById(id);
   }
 
 
   @Override
   public void delete(Book book) {
-    // TODO Auto-generated method stub
-
+    if (book == null || book.getId() == null) {
+      throw new IllegalArgumentException("Book id can be null");
+    }
+    this.repository.delete(book);
   }
 
 
   @Override
   public Book update(Book book) {
-    // TODO Auto-generated method stub
-    return null;
+    if (book == null || book.getId() == null) {
+      throw new IllegalArgumentException("Book id can be null");
+    }
+    return this.repository.save(book);
   }
 
 }
