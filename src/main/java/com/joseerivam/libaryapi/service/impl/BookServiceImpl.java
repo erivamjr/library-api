@@ -1,6 +1,8 @@
 package com.joseerivam.libaryapi.service.impl;
 
 import java.util.Optional;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -8,6 +10,7 @@ import com.joseerivam.libaryapi.exception.BusinessException;
 import com.joseerivam.libaryapi.model.entity.Book;
 import com.joseerivam.libaryapi.model.repository.BookRepository;
 import com.joseerivam.libaryapi.service.BookService;
+import net.bytebuddy.matcher.StringMatcher;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -54,8 +57,10 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public Page<Book> find(Book filter, Pageable pageRequest) {
+    Example<Book> example = Example.of(filter, ExampleMatcher.matching().withIgnoreCase()
+        .withIgnoreNullValues().withStringMatcher(ExampleMatcher.StringMatcher.STARTING));
     // TODO Auto-generated method stub
-    return null;
+    return repository.findAll(example, pageRequest);
   }
 
 }
