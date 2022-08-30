@@ -41,7 +41,7 @@ public class LoanServiceTest {
     Loan savedLoan =
         Loan.builder().id(1L).loanDate(LocalDate.now()).customer(customer).book(book).build();
 
-    Mockito.when(repository.existsByBookAndNorReturned(book)).thenReturn(false);
+    Mockito.when(repository.existsByBookAndNotReturned(book)).thenReturn(false);
     Mockito.when(repository.save(savingLoan)).thenReturn(savedLoan);
 
     Loan loan = service.save(savingLoan);
@@ -58,15 +58,16 @@ public class LoanServiceTest {
 
     Book book = Book.builder().id(1L).build();
     String customer = "Fulano";
+
     Loan savingLoan =
         Loan.builder().book(book).customer(customer).loanDate(LocalDate.now()).build();
 
-    Mockito.when(repository.existsByBookAndNorReturned(book)).thenReturn(true);
+    Mockito.when(repository.existsByBookAndNotReturned(book)).thenReturn(true);
 
 
-    Throwable extension = catchThrowable(() -> service.save(savingLoan));
+    Throwable exception = catchThrowable(() -> service.save(savingLoan));
 
-    assertThat(extension).isInstanceOf(BusinessException.class).hasMessage("Book already loaned");
+    assertThat(exception).isInstanceOf(BusinessException.class).hasMessage("Book already loaned");
 
     Mockito.verify(repository, Mockito.never()).save(savingLoan);
 
