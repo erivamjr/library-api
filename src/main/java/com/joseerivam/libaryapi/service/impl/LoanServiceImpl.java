@@ -28,13 +28,13 @@ public class LoanServiceImpl implements LoanService {
   @Override
   public Optional<Loan> getById(Long id) {
     // TODO Auto-generated method stub
-    return Optional.empty();
+    return repository.findById(id);
   }
 
   @Override
   public Loan update(Loan loan) {
     // TODO Auto-generated method stub
-    return null;
+    return repository.save(loan);
   }
 
 
