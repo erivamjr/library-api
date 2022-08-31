@@ -21,7 +21,6 @@ import lombok.RequiredArgsConstructor;
 public class LoanController {
 
   private final LoanService service;
-
   private final BookService bookService;
 
   @PostMapping
