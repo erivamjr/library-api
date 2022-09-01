@@ -1,6 +1,10 @@
 package com.joseerivam.libaryapi.service.impl;
 
+import java.util.Optional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import com.joseerivam.libaryapi.api.dto.LoanFilterDTO;
 import com.joseerivam.libaryapi.exception.BusinessException;
 import com.joseerivam.libaryapi.model.entity.Loan;
 import com.joseerivam.libaryapi.model.repository.LoanRepository;
@@ -22,6 +26,24 @@ public class LoanServiceImpl implements LoanService {
       throw new BusinessException("Book already loaned");
     }
     return repository.save(loan);
+  }
+
+  @Override
+  public Optional<Loan> getById(Long id) {
+    // TODO Auto-generated method stub
+    return repository.findById(id);
+  }
+
+  @Override
+  public Loan update(Loan loan) {
+    // TODO Auto-generated method stub
+    return repository.save(loan);
+  }
+
+  @Override
+  public Page<Loan> find(LoanFilterDTO filterDTO, Pageable pageable) {
+    // TODO Auto-generated method stub
+    return null;
   }
 
 
