@@ -1,11 +1,14 @@
 package com.joseerivam.libaryapi.service.impl;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.joseerivam.libaryapi.api.dto.LoanFilterDTO;
 import com.joseerivam.libaryapi.exception.BusinessException;
+import com.joseerivam.libaryapi.model.entity.Book;
 import com.joseerivam.libaryapi.model.entity.Loan;
 import com.joseerivam.libaryapi.model.repository.LoanRepository;
 import com.joseerivam.libaryapi.service.LoanService;
@@ -43,7 +46,22 @@ public class LoanServiceImpl implements LoanService {
   @Override
   public Page<Loan> find(LoanFilterDTO filterDTO, Pageable pageable) {
     // TODO Auto-generated method stub
-    return null;
+    return repository.findByBookIsbnOrCustomer(filterDTO.getIsbn(), filterDTO.getCustomer(),
+        pageable);
+  }
+
+  @Override
+  public Page<Loan> getLoansByBook(Book book, Pageable pageable) {
+    // TODO Auto-generated method stub
+    return repository.findByBook(book, pageable);
+  }
+
+  @Override
+  public List<Loan> getAllLateLoans() {
+    // TODO Auto-generated method stub
+    final Integer loanDays = 4;
+    LocalDate threeDaysAgo = LocalDate.now().minusDays(loanDays);
+    return repository.findByLoanDateLessThanAndNotReturned(threeDaysAgo);
   }
 
 
