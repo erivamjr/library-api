@@ -3,6 +3,8 @@ package com.joseerivam.libaryapi.api.resourse;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import java.util.Arrays;
 import java.util.Optional;
+
+import com.joseerivam.libaryapi.service.LoanService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,6 +45,9 @@ public class BookControllerTest {
 
   @MockBean
   BookService service;
+
+  @MockBean
+  LoanService loanService;
 
   @Test
   @DisplayName("Must successfully create a book")

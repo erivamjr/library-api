@@ -1,9 +1,11 @@
 package com.joseerivam.libaryapi.service.impl;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import com.joseerivam.libaryapi.service.EmailService;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +18,7 @@ public class EmailServiceImpl implements EmailService {
   @Value("${application.mail.default-remetent}")
   private String remetent;
 
+  @Autowired
   private final JavaMailSender javaMailSender;
 
   @Override
