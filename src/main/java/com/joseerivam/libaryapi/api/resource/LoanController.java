@@ -3,6 +3,9 @@ package com.joseerivam.libaryapi.api.resource;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -30,6 +33,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/loans")
 @RequiredArgsConstructor
+@Api("Book API")
 public class LoanController {
 
   private final LoanService service;
@@ -38,6 +42,7 @@ public class LoanController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
+  @ApiOperation("Create loans")
   public Long create(@RequestBody LoanDTO dto) {
 
     Book book = bookService.getBookByIsbn(dto.getIsbn())
@@ -52,6 +57,7 @@ public class LoanController {
   }
 
   @PatchMapping("{id}")
+  @ApiOperation("Get loans by id")
   public void returnBook(@PathVariable Long id, @RequestBody ReturnedLoanDTO dto) {
     Loan loan =
         service.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
@@ -60,6 +66,7 @@ public class LoanController {
   }
 
   @GetMapping
+  @ApiOperation("Find loans")
   public Page<LoanDTO> find(LoanFilterDTO dto, Pageable pageRequest) {
     Page<Loan> result = service.find(dto, pageRequest);
     List<LoanDTO> loans = result.getContent().stream().map(entity -> {
