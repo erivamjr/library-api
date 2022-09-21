@@ -1,12 +1,16 @@
 package com.joseerivam.libaryapi.api.resourse;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Optional;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.joseerivam.libaryapi.api.dto.LoanDTO;
+import com.joseerivam.libaryapi.api.dto.LoanFilterDTO;
+import com.joseerivam.libaryapi.api.dto.ReturnedLoanDTO;
+import com.joseerivam.libaryapi.api.resource.LoanController;
+import com.joseerivam.libaryapi.exception.BusinessException;
+import com.joseerivam.libaryapi.model.entity.Book;
+import com.joseerivam.libaryapi.model.entity.Loan;
+import com.joseerivam.libaryapi.service.BookService;
+import com.joseerivam.libaryapi.service.LoanService;
+import com.joseerivam.libaryapi.service.LoanServiceTest;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,23 +31,18 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.joseerivam.libaryapi.api.dto.LoanDTO;
-import com.joseerivam.libaryapi.api.dto.LoanFilterDTO;
-import com.joseerivam.libaryapi.api.dto.ReturnedLoanDTO;
-import com.joseerivam.libaryapi.api.resource.LoanController;
-import com.joseerivam.libaryapi.exception.BusinessException;
-import com.joseerivam.libaryapi.model.entity.Book;
-import com.joseerivam.libaryapi.model.entity.Loan;
-import com.joseerivam.libaryapi.service.BookService;
-import com.joseerivam.libaryapi.service.LoanService;
-import com.joseerivam.libaryapi.service.LoanServiceTest;
+
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Optional;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
-@WebMvcTest(controllers = LoanController.class)
 @AutoConfigureMockMvc
+@WebMvcTest(controllers = LoanController.class)
 public class LoanControllerTest {
 
   static final String LOAN_API = "/api/loans";
