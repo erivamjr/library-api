@@ -11,10 +11,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class LibaryApiApplication {
+public class LibraryApiApplication {
 
-  @Autowired
-  private ApplicationContext context;
+//  @Autowired
+//  private ApplicationContext context;
 
 //  @Autowired
 //  private EmailService emailService;
@@ -34,7 +34,7 @@ public class LibaryApiApplication {
 //  }
 
   public static void main(String[] args) {
-    SpringApplication.run(LibaryApiApplication.class, args);
+    SpringApplication.run(LibraryApiApplication.class, args);
   }
 
 }
