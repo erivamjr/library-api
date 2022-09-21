@@ -14,9 +14,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class LibraryApiApplication {
 
 //  @Autowired
-//  private ApplicationContext context;
-
-//  @Autowired
 //  private EmailService emailService;
 
   @Bean
