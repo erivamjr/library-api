@@ -1502,3 +1502,52 @@ Caused by: java.lang.NullPointerException: null
 2022-09-22 14:14:00.158  INFO 87192 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-09-22 14:14:00.162  INFO 87192 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-09-22 14:14:00.164  INFO 87192 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-22 17:01:04.370  INFO 9370 --- [main] c.j.l.api.resourse.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.16 on erivam-C62-LIV with PID 9370 (started by erivam in /home/erivam/eclipse-workspace/Projetos/libary-api)
+2022-09-22 17:01:04.371  INFO 9370 --- [main] c.j.l.api.resourse.LoanControllerTest    : The following 1 profile is active: "test"
+2022-09-22 17:01:08.180  INFO 9370 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-22 17:01:08.181  INFO 9370 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-22 17:01:08.184  INFO 9370 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2022-09-22 17:01:08.600  INFO 9370 --- [main] c.j.l.api.resourse.LoanControllerTest    : Started LoanControllerTest in 4.679 seconds (JVM running for 6.383)
+2022-09-22 17:01:16.991  INFO 9617 --- [main] c.j.l.api.resourse.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.16 on erivam-C62-LIV with PID 9617 (started by erivam in /home/erivam/eclipse-workspace/Projetos/libary-api)
+2022-09-22 17:01:16.992  INFO 9617 --- [main] c.j.l.api.resourse.LoanControllerTest    : The following 1 profile is active: "test"
+2022-09-22 17:01:19.059  INFO 9617 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-22 17:01:19.059  INFO 9617 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-22 17:01:19.061  INFO 9617 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2022-09-22 17:01:19.326  INFO 9617 --- [main] c.j.l.api.resourse.LoanControllerTest    : Started LoanControllerTest in 2.688 seconds (JVM running for 3.618)
+2022-09-22 17:01:55.242  INFO 9829 --- [main] c.j.l.api.resourse.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.16 on erivam-C62-LIV with PID 9829 (started by erivam in /home/erivam/eclipse-workspace/Projetos/libary-api)
+2022-09-22 17:01:55.245  INFO 9829 --- [main] c.j.l.api.resourse.LoanControllerTest    : The following 1 profile is active: "test"
+2022-09-22 17:01:57.279  INFO 9829 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-22 17:01:57.279  INFO 9829 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-22 17:01:57.281  INFO 9829 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2022-09-22 17:01:57.596  INFO 9829 --- [main] c.j.l.api.resourse.LoanControllerTest    : Started LoanControllerTest in 2.688 seconds (JVM running for 3.541)
+2022-09-22 17:02:21.855  INFO 9939 --- [restartedMain] c.j.libaryapi.LibraryApiApplication      : Starting LibraryApiApplication using Java 11.0.16 on erivam-C62-LIV with PID 9939 (/home/erivam/eclipse-workspace/Projetos/libary-api/target/classes started by erivam in /home/erivam/eclipse-workspace/Projetos/libary-api)
+2022-09-22 17:02:21.857  INFO 9939 --- [restartedMain] c.j.libaryapi.LibraryApiApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-09-22 17:02:21.911  INFO 9939 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-22 17:02:21.911  INFO 9939 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-22 17:02:22.905  INFO 9939 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-22 17:02:22.942  INFO 9939 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
+2022-09-22 17:02:23.516  INFO 9939 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-22 17:02:23.524  INFO 9939 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-22 17:02:23.525  INFO 9939 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-09-22 17:02:23.570  INFO 9939 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-22 17:02:23.571  INFO 9939 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1659 ms
+2022-09-22 17:02:23.701  INFO 9939 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-22 17:02:23.920  INFO 9939 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-22 17:02:23.928  INFO 9939 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:138df02d-ec75-4157-a00d-cfc21ecafa2c'
+2022-09-22 17:02:24.129  INFO 9939 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-22 17:02:24.182  INFO 9939 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2022-09-22 17:02:24.284  INFO 9939 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-22 17:02:24.380  INFO 9939 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-22 17:02:24.810  INFO 9939 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-22 17:02:24.817  INFO 9939 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-22 17:02:25.566  WARN 9939 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-22 17:02:25.763  INFO 9939 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-22 17:02:26.084  INFO 9939 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-22 17:02:26.366  INFO 9939 --- [restartedMain] c.j.libaryapi.LibraryApiApplication      : Started LibraryApiApplication in 4.874 seconds (JVM running for 5.342)
+2022-09-22 17:02:33.650  INFO 9939 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-22 17:02:33.650  INFO 9939 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-22 17:02:33.652  INFO 9939 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-09-22 17:25:47.390  INFO 9939 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-22 17:25:47.390  INFO 9939 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-22 17:25:47.403  INFO 9939 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-22 17:25:47.406  INFO 9939 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
