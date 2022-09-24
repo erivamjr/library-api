@@ -1,4 +1,4 @@
-![enter image description here](./Liberty%20Library%20Facebook%20Cover.png)
+![enter image description here](./library-title.png)
 
 ## :books: Descrição
 
