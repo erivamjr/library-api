@@ -1,4 +1,4 @@
-![enter image description here](./library-title.png)
+![PROJECT LIBRARY API](./library-title.png)
 
 ## :books: Descrição
 
