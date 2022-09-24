@@ -125,6 +125,6 @@ JSON:
 - Clone o repositório
 
 ```
-git clone git@github.com:erivamjr/libary-api.git
+git clone git@github.com:erivamjr/library-api.git
 ```
 Depois abra com uma IDE de preferencia IntelliJ, baixe as dependencias e rode o projeto.
