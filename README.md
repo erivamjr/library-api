@@ -130,7 +130,8 @@ git clone git@github.com:erivamjr/library-api.git
 Depois abra com uma IDE de preferencia IntelliJ, baixe as dependencias e rode o projeto.
 
 
-Abrindo o swagger depois que estiver rodando.
+- Abrindo o swagger depois que estiver rodando.
+
 http://localhost:8080/swagger-ui/index.html
 
 ### 🤝 Contribuindo
@@ -139,6 +140,8 @@ Este repositório foi criado para fins de estudo, então contribua com ele.
 Se te ajudei de alguma forma, ficarei feliz em saber. E caso você conheça alguém que se identidique com o conteúdo, não deixe de compatilhar.
 
 Se possível:
+
 ⭐ Star o projeto
+
 🐛 Encontrar e relatar issues
 
