@@ -1,4 +1,4 @@
-![enter image description here](./Liberty%20Library%20Facebook%20Cover.png)
+![PROJECT LIBRARY API](./library-title.png)
 
 ## :books: Descrição
 
@@ -125,9 +125,10 @@ JSON:
 - Clone o repositório
 
 ```
-git clone git@github.com:erivamjr/libary-api.git
+git clone git@github.com:erivamjr/library-api.git
 ```
 Depois abra com uma IDE de preferencia IntelliJ, baixe as dependencias e rode o projeto.
+
 
 Abrindo o swagger depois que estiver rodando.
 http://localhost:8080/swagger-ui/index.html
@@ -140,3 +141,4 @@ Se te ajudei de alguma forma, ficarei feliz em saber. E caso você conheça algu
 Se possível:
 ⭐ Star o projeto
 🐛 Encontrar e relatar issues
+
